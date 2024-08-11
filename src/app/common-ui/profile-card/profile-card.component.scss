@@ -24,3 +24,9 @@
     justify-content: center;
     gap: 4px;
 }
+
+.profile-card__tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}

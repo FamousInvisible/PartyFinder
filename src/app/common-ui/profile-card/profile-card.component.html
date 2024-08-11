@@ -1,25 +1,28 @@
+@if (profile){
 <div class="profile-card">
     <div class="avatar-nick">
-        <img src="assets/imgs/test_avatar.png" class="profile-card__avatar" alt="avatar">
+        <img
+            [src]="profile.avatarUrl | imgUrl" 
+            class="profile-card__avatar" 
+            alt="avatar"
+         >
 
         <div class="profile-card__nick">
-            <strong class="h6">FamousInvisible</strong>
-            <span class="subtitle">&#64;famousinvisible</span>
+            <strong class="h6">{{ profile.firstName }} {{ profile.lastName }}</strong>
+            <span class="subtitle">{{ profile.username }}</span>
         </div>
     </div>
 
-    <div class="profile-card__description">
-        Меня зовут Александр, я люблю играть в кооперативные шутеры и выживалки. Не люблю негатив и играю ради удовольствия, а не результата. Добавляйтесь ко мне и давайте хорошо проведем вместе время
-    </div>
+    <div class="profile-card__description">{{ profile.description }}</div>
 
     <div class="profile-card__tags">
-        <div class="games-tag">Helldivers 2</div>
-        <div class="games-tag">Dungeon And Dragons</div>
-        <div class="games-tag">Dark Heresy</div>
-        <div class="games-tag">Minecraft</div>
+        @for(tag of profile.stack; track tag){
+            <div class="games-tag">{{ tag }}</div>
+        }
     </div>
 
     <div class="profile_card__action-btns">
         <div class="btn">Отправить запрос в друзья</div>
     </div>
 </div>
+}
