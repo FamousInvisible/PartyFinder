@@ -1,4 +1,7 @@
 :host{
+    --positive-hue-color: invert(0.5) sepia(1) saturate(0) hue-rotate(0deg);
+    --negative-hue-color: invert(0.5) sepia(1) saturate(5) hue-rotate(320deg);
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100dvh;
@@ -7,10 +10,32 @@
 }
 
 img{
-    width: 800px;
-    height: 800px;
+    width: 700px;
+    height: 300px;
+    position: relative;
+    top:60px
 }
 
 .login-form{
     width: 440px;
+}
+
+.password-input{
+    position: relative;
+}
+
+.password-eye-btn{
+    position: absolute;
+    bottom: 44px;
+    right: 12px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    filter: var(--positive-hue-color);
+    cursor: pointer;
+}
+
+.eye-crossed-icon{
+    width: 20px;
+    height: 20px;
 }

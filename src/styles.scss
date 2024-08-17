@@ -3,8 +3,10 @@
 :root{
     --dark-color: #000000;
     --light-color: #FFFFFF;
-    --primary-color: rgba(174, 122, 255, 1);
+    --primary-color: rgb(56, 141, 226);
     --gray-color: #5F646D;
+    --action-color: rgb(56, 114, 171);
+    --dark-action-color: #161616;
 }
 
 body{
@@ -13,10 +15,11 @@ body{
     font-family: "JetBrains Mono", sans-serif;
     background-image: url('/assets/imgs/background3.png');
     background-size: cover;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(0px);
     margin: 0;
     padding: 0;
     height: 100dvh;
+    animation: backflow infinite 100s ease-in-out;
 }
 
 .btn{
@@ -24,8 +27,9 @@ body{
     background: var(--primary-color);
     color: var(--dark-color);
     padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 800;
     line-height: 24px;
     text-align: center;
     border: 1px solid var(--dark-color);
@@ -38,6 +42,7 @@ body{
     padding: 4px 8px;
     font-size: 12px;
     font-weight: 700;
+    background: var(--dark-color);
 }
 
 .h6{
@@ -96,4 +101,14 @@ h1{
         z-index: -1;
         border-radius: 4px;
     }
+}
+
+@keyframes backflow {
+    50%{
+        background-position: 500px;
+    }
+}
+
+.btn:hover{
+    background: var(--action-color);
 }

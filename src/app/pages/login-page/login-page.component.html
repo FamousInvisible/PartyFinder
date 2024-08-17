@@ -9,14 +9,28 @@
         Discord username
         <input 
         formControlName="username" 
-        class="pf-input" type="text" placeholder="Введите логин">
+        class="pf-input"
+        type="text" 
+        placeholder="Введите логин">
     </label>
 
     <label class="pf-control-label mb-32">
         Пароль
-        <input
-        formControlName="password"
-        class="pf-input" type="text" placeholder="Введите пароль">
+        <span class="password-input">
+            <input
+            formControlName="password"
+            class="pf-input" 
+            [type]="isPasswordVisible() ? 'text' : 'password' " 
+            placeholder="Введите пароль">
+
+            <button 
+                class="password-eye-btn"
+                [style.filter]="isPasswordVisible() ? 'var(--negative-hue-color)' : 'var(--positive-hue-color)'"
+                (click)="isPasswordVisible.set(!isPasswordVisible())"
+            >
+                <img class="eye-crossed-icon" src="assets/svg/eye-crossed-icon.svg" alt="eye_crossed_icon">
+            </button>
+        </span>
     </label>
 
     <button class="btn pf-control-btn btn-shadow">Войти</button>

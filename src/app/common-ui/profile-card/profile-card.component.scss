@@ -5,6 +5,8 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 32px;
     align-items: center;
+    background: var(--gray-color);
+    opacity: 95%;
 }
 .avatar-nick{
     display: grid;

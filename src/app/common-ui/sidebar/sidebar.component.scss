@@ -1,0 +1,36 @@
+:host{
+    display: block;
+    padding: 20px 12px;
+}
+img{
+    width: 250px;
+    height: 100px;
+}
+
+.main-menu-list{
+    display: grid;
+    grid-gap: 8px;
+}
+
+.menu-item{
+    padding: 16px 12px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    display: grid;
+    grid-template-columns: 16px 1fr max-content;
+    align-items: center;
+    grid-gap: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24;
+    width: 100%;
+    text-align: left;
+    border-radius: 2px;
+
+    &:hover,
+    &:focus-visible{
+        background: var(--dark-action-color);
+        color: var(--primary-color);
+    }
+}
