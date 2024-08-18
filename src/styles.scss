@@ -8,7 +8,10 @@
     --action-color: rgb(56, 114, 171);
     --dark-action-color: #161616;
 }
-
+*{
+    margin: 0px;
+    padding: 0px;
+}
 body{
     background: var(--dark-color);
     color: var(--light-color);
@@ -68,6 +71,13 @@ h1{
     font-size: 12px;
     line-height: 16px;
     display: block;
+}
+
+.medium-text{
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16;
 }
 
 .pf-input{

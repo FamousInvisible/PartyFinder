@@ -1,12 +1,14 @@
-<img class="ml-16 mb-20" src="/assets/svg/logo.svg" alt="logo">
+<img class="ml-16 mb-20 menu-logo" src="/assets/svg/logo.svg" alt="logo">
 
 <nav>
     <ul class="main-menu-list">
-        <li>
+        <li *ngFor="let menuItem of menuItems">
             <button class="menu-item">
-                <img src="/assets/svg/home.svg" alt="home">
-                <span>Моя страница</span>
+                <svg class="menu-icon" [icon]="menuItem.icon"></svg>
+                <span>{{ menuItem.label }}</span>
             </button>
         </li>
     </ul>
 </nav>
+
+<p class="medium-text mb-20">Подписчики</p>
