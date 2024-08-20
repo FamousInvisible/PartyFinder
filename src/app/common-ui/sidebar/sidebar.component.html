@@ -1,6 +1,6 @@
 <img class="ml-16 mb-20 menu-logo" src="/assets/svg/logo.svg" alt="logo">
 
-<nav>
+<nav class="mb-20">
     <ul class="main-menu-list">
         <li *ngFor="let menuItem of menuItems">
             <button class="menu-item">
@@ -12,3 +12,34 @@
 </nav>
 
 <p class="medium-text mb-20">Подписчики</p>
+
+
+@for (profile of subscribers$ | async; track profile.id){
+    <app-subscriber-card
+        [profile] = "profile"
+    ></app-subscriber-card> 
+}
+
+<div class="mt-20 to-subscribers">
+    <a 
+        class="to-subscribers-link medium-text"
+        [routerLink]="['/subscribers']">Все подписчики
+    </a>
+    <svg icon="arrow" class="to-subscribers-icon"></svg>
+</div>
+
+<footer class="sidebar__footer">
+    @if (me(); as me){
+        @if (me.avatarUrl){
+            <img [src]="me.avatarUrl | imgUrl" alt="">
+        } @else {
+            <img src="/assets/imgs/test_avatar.png" alt="">
+        }
+
+        <div class="medium-text username-text">{{ me.username }}</div>
+
+        <a [routerLink]="['settings']" class="settings-btn">
+            <svg icon="settings"></svg>
+        </a>
+    }
+</footer>
