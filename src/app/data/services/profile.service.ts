@@ -11,11 +11,12 @@ export class ProfileService {
   http = inject(HttpClient)
 
   baseApiUrl = 'https://icherniakov.ru/yt-course/'
+  newApiUrl = 'http://localhost:5176/'
 
   me = signal<Profile | null>(null)
 
   getTestAccounts(){
-    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
+    return this.http.get<Profile[]>(`${this.newApiUrl}profiles`)
   }
 
   getAccount(id: string){

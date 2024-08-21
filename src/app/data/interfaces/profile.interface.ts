@@ -7,6 +7,6 @@ export interface Profile{
     firstName: string,
     lastName: string,
     isActive: boolean,
-    stack: string[],
+    games: string[],
     city: string
 }

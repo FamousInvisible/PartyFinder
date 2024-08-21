@@ -8,7 +8,7 @@ export class ImgUrlPipe implements PipeTransform {
 
   transform(value: string | null): string | null {
     if (!value) return null
-    return `https://icherniakov.ru/yt-course/${value}`;
+    return `https://imgur.com/${value}`;
   }
 
 }
